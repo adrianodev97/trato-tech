@@ -1,3 +1,5 @@
+@import '../../styles/index.scss';
+
 .footer {
   align-items: center;
   background-image: url('../../assets/footer.png');
@@ -5,10 +7,15 @@
   background-repeat: no-repeat;
   bottom: 0;
   display: flex;
-  height: 80px;
+  min-height: 80px;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 16px 50px;
   width: 100%;
+
+  @media(max-width: $mobile) {
+    flex-direction: column;
+    gap: 20px;
+  }
 
   div {
     display: flex;
@@ -19,5 +26,9 @@
     color: white;
     font-size: 16px;
     text-align: right;
+
+    @media(max-width: $mobile) {
+      text-align: center;
+    }
   }
 }
