@@ -1,0 +1,45 @@
+@import '../../../styles/index.scss';
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @media(max-width: $tablet) {
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &-text {
+    color: white;
+    max-width: 520px;
+    grid-area: 'text';
+    h1 {
+      font-size: 48px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  &-button {
+    display: flex;
+    @media(max-width: $tablet) {
+      justify-content: center;
+    }
+  }
+
+  &-image {
+    align-self: center;
+    grid-area: image;
+    justify-self: center;
+    overflow: hidden;
+    max-width: 700px;
+
+    img {
+      border-radius: 144px;
+      width: 100%;
+    }
+  }
+}
