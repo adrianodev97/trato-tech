@@ -1,14 +1,5 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import Router from "./routes"
 
-function App() {
-
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<></>} />
-      </Routes>
-    </Router>
-  )
-}
+const App = () => <Router />
 
 export default App
