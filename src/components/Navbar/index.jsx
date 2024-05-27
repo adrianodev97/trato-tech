@@ -1,32 +1,37 @@
 import { RiShoppingCart2Line, RiShoppingCartFill } from 'react-icons/ri'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Logo from '../../assets/Logo'
+import Search from '../Search'
 import './styles.scss'
 
 const Navbar = () => {
-  const isHome = window.location.pathname === '/'
-  const isCart = window.location.pathname === '/cart'
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const isHome = location.pathname === '/'
+  const isCart = location.pathname === '/cart'
 
   return (
     <nav className='nav'>
-      <Logo className="logo" />
+      <Logo className="logo" onClick={() => navigate('/')} />
       <div className="links">
         <div>
-          <a href="/" className={['link', isHome? 'selected' : ''].join(' ')}>
+          <Link to="/" className={['link', isHome? 'selected' : ''].join(' ')}>
             Página inicial
-          </a>
+          </Link>
         </div>
       </div>
       <div className="search">
-
+        <Search />
       </div>
       <div className="icons">
-        <a href="/cart">
+        <Link to="/cart">
           {isCart ?
-            <RiShoppingCartFill className='icon' />
+            <RiShoppingCartFill className='light-icon' />
             :
-            <RiShoppingCart2Line className='icon' />
+            <RiShoppingCart2Line className='light-icon' />
           }
-        </a>
+        </Link>
       </div>
     </nav>
   )
